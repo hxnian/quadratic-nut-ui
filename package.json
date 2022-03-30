@@ -1,6 +1,6 @@
 {
-  "name": "my-ui",
-  "version": "1.0.0",
+  "name": "quadratic-nut-uis",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "keywords": [
@@ -8,7 +8,7 @@
     "vue",
     "vue3",
     "webpack",
-    "mzui",
+    "quadratic-nut-ui",
     "vue3 component",
     "vite"
   ],
@@ -26,16 +26,12 @@
   "scripts": {
     "dev": "npm run checked && vite --open --force",
     "checked": "npm run generate:file && tsc",
-    "generate:file": "node bin/generate-nutui.js",
+    "generate:file": "node bin/generate-mzui.js",
     "build": "npm run checked && vite build --config vite.config.build.ts && vite build --config vite.config.build.disperse.ts && npm run generate:types && npm run generate:themes && vite build --config vite.config.build.css.ts",
-
     "generate:types": "node bin/generate-types.js",
     "generate:themes": "node bin/generate-themes.js",
-
     "build:taro:vue": "npm run checked:taro:vue && vite build --config vite.config.build.taro.vue.ts && vite build --config vite.config.build.taro.vue.disperse.ts && npm run generate:types && npm run generate:themes && vite build --config vite.config.build.css.ts",
-
     "checked:taro:vue": "npm run generate:file:taro:vue",
-
     "dev:taro:vue": "npm run checked:taro:vue && cd src/sites/mobile-taro/vue/ && npm run dev:weapp",
     "dev:taro:h5": "npm run checked:taro:vue && cd src/sites/mobile-taro/vue/ && npm run dev:h5",
     "build:site": "npm run checked && vite build",
@@ -45,7 +41,6 @@
     "add": "node jd/createComponentMode.js",
     "publish:beta": "npm publish --tag=beta",
     "publish": "npm publish",
-
     "generate:file:taro:vue": "node jd/generate-nutui-taro-vue.js",
     "prepare": "husky install",
     "test": "jest",
@@ -66,7 +61,7 @@
     "@commitlint/cli": "^10.0.0",
     "@commitlint/config-conventional": "^10.0.0",
     "@tarojs/taro": "^3.3.0-alpha.8",
-    "@types/jest": "^26.0.22",
+    "@types/jest": "^26.0.24",
     "@types/node": "^14.14.31",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
@@ -125,6 +120,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jdf2e/nutui.git"
+    "url": "https://github.com/hxnian/quadratic-nut-ui.git"
   }
 }
