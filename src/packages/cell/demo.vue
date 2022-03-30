@@ -1,18 +1,10 @@
-<!--
- * @Author: your name
- * @Date: 2022-03-30 19:06:30
- * @LastEditTime: 2022-03-30 22:11:09
- * @LastEditors: your name
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: \quadratic-nut-ui\src\packages\button\demo.vue
--->
 <template>
     <div class="demo">
         <h2>按钮类型</h2>
         <div class="demo-button-row">
-            <mz-button type="primary">主要按钮</mz-button>
-            <mz-button type="info">信息按钮</mz-button>
-            <mz-button type="default">默认按钮</mz-button>
+            <nut-button type="primary">主要按钮</nut-button>
+            <nut-button type="info">信息按钮</nut-button>
+            <nut-button type="default">默认按钮</nut-button>
         </div>
     </div>
 </template>

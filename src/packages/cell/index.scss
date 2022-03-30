@@ -1,0 +1,51 @@
+.mz-cell-wrapper {
+  width: 100%;
+  min-height: 100px;
+  background: #fff;
+  box-shadow: none;
+  border-radius: 10px;
+  padding: 0 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.mz-cell-icon {
+  height: 100%;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-start;
+}
+.mz-cell-img-icon {
+  font-size: 40px;
+  color: $text-des;
+}
+.mz-cell-link {
+  height: 100%;
+  width: 30%;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.mz-cell-title {
+  font-weight: 600;
+  line-height: 45px;
+  font-size: 32px;
+  color: $text-primary;
+}
+.mz-cell-sub-title {
+  font-size: 24px;
+  line-height: 33px;
+  margin-top: 12px;
+}
+.mz-cell-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 10px;
+}
+.mz-cell-desc {
+  line-height: 33px;
+  font-size: 24px;
+}
+.mz-cell-right {
+  color: #aaaaaa;
+}

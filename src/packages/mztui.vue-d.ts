@@ -3,7 +3,7 @@ import Button from './button/index.vue';
 
 function install(app: App) {
   const packages = [Button];
-  packages.forEach((item: any) => {
+  packages.forEach((item:any) => {
     if (item.install) {
       app.use(item);
     } else if (item.name) {
@@ -14,5 +14,5 @@ function install(app: App) {
 
 import './button/index.scss';
 
-export { install, Button };
-export default { install, version: '1.0.0' };
+export { install, Button  };
+export default { install, version:'1.0.3'};

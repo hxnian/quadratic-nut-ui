@@ -1,5 +1,6 @@
 import { App } from 'vue';
 import Button from './button/index.vue';
+import Cell from './cell/index.vue';
 
 // import Avatar from './__VUE/avatar/index.vue';
 // import Cell from './__VUE/cell/index.vue';
@@ -79,7 +80,7 @@ import Button from './button/index.vue';
 // import Table from './__VUE/table/index.vue';
 
 function install(app: App) {
-  const packages = [Button];
+  const packages = [Button, Cell];
   packages.forEach((item: any) => {
     if (item.install) {
       app.use(item);
@@ -91,7 +92,7 @@ function install(app: App) {
 import './button/index.scss';
 
 // import './__VUE/avatar/index.scss';
-// import './__VUE/cell/index.scss';
+import './cell/index.scss';
 // import './__VUE/cellgroup/index.scss';
 // import './__VUE/icon/index.scss';
 // import './__VUE/price/index.scss';
@@ -167,5 +168,5 @@ import './button/index.scss';
 // import './__VUE/card/index.scss';
 // import './__VUE/table/index.scss';
 
-export { Button };
+export { Button, Cell };
 export default { install, version: '3.1.12' };

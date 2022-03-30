@@ -11,6 +11,6 @@ function install(app: App) {
     }
   });
 }
-const version = '1.0.0';
+const version = '1.0.3';
 export { install, version, Button};
 export default { install, version};
