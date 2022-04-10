@@ -38,8 +38,8 @@
     "generate:themes": "node bin/generate-themes.js",
     "publish": "npm publish",
     "build": "npm run checked && vite build --config vite.config.build.ts && vite build --config vite.config.build.disperse.ts && npm run generate:types && npm run generate:themes && vite build --config vite.config.build.css.ts",
-    "deploy": "gh-pages -d .",
-    "deploy:build": "npm run build:doc && gh-pages -d ."
+    "deploy": "gh-pages -d ./dist",
+    "deploy:build": "npm run build:doc && gh-pages -d ./dist"
   },
   "dependencies": {
     "sass": "~1.32.0",
