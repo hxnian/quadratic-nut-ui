@@ -1,9 +1,18 @@
 {
-  "name": "mz-ui",
-  "private": true,
+  "name": "mz-taro-ui",
   "version": "1.0.0",
-  "main": "index.js",
-   "keywords": [
+  "main": "dist/mzui.umd.js",
+  "module": "dist/mzui.es.js",
+  "style": "dist/style.css",
+  "typings": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/mzui.es.js",
+      "require": "./dist/mzui.umd.js"
+    }
+  },
+  "keywords": [
+    "mzui",
     "nutui",
     "vue",
     "vue3",
@@ -12,9 +21,9 @@
     "vue3 component",
     "vite"
   ],
-   "author": "xiao",
+  "author": "xiao",
   "license": "MIT",
-   "files": [
+  "files": [
     "dist",
     "README.md",
     "package.json"
@@ -27,20 +36,23 @@
     "generate:file": "node bin/generate-mzui.js",
     "generate:types": "node bin/generate-types.js",
     "generate:themes": "node bin/generate-themes.js",
+    "publish": "npm publish",
     "build": "npm run checked && vite build --config vite.config.build.ts && vite build --config vite.config.build.disperse.ts && npm run generate:types && npm run generate:themes && vite build --config vite.config.build.css.ts"
-
   },
   "dependencies": {
-    "highlight.js": "^11.5.0",
-    "vue": "^3.2.31",
+    "sass": "~1.32.0",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
+    "highlight.js": "^11.5.0",
+    "vue": "^3.2.31",
     "fs-extra": "^10.0.1",
+    "@tarojs/taro": "^3.4.0",
     "@types/node": "^17.0.23",
     "@vitejs/plugin-vue": "^2.3.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
     "autoprefixer": "^10.4.4",
-    "sass": "^1.49.11",
     "typescript": "^4.5.4",
     "vite": "^2.9.0",
     "vite-plugin-md": "^0.12.4",
@@ -65,5 +77,9 @@
       "vue/no-unused-components": "off",
       "no-debugger": "off"
     }
+  },
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/hxnian/quadratic-nut-ui.git"
   }
 }
