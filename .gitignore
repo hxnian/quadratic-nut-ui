@@ -24,7 +24,6 @@ dist-ssr
 *.sw?
 .DS_Store
 node_modules
-/dist
 /libs
 /bin/upload.js
 yarn.lock
