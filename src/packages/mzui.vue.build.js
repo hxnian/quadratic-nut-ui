@@ -15,6 +15,6 @@ function install(app) {
         }
     });
 }
-const version = '1.0.0';
+const version = '1.0.1';
 export { install, version, Button, Cell, DetailsCell, FormList, Loading, SearchPage };
 export default { install, version };

@@ -22,4 +22,4 @@ import './formlist/index.scss';
 import './loading/index.scss';
 import './searchpage/index.scss';
 export { install, Button, Cell, DetailsCell, FormList, Loading, SearchPage };
-export default { install, version: '1.0.0' };
+export default { install, version: '1.0.1' };
