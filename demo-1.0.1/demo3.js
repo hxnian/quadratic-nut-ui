@@ -1,0 +1,1 @@
+import{_ as o,f as s,o as _,x as c,y as d,g as t}from"./config.js";const a={},r=e=>(c("data-v-f5dd8020"),e=e(),d(),e),n={class:"demo"},p=r(()=>t("div",{class:"bac-1"},null,-1)),i=[p];function l(e,f){return _(),s("div",n,i)}var v=o(a,[["render",l],["__scopeId","data-v-f5dd8020"]]);export{v as default};
