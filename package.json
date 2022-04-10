@@ -4,7 +4,7 @@
   "main": "dist/mzui.umd.js",
   "module": "dist/mzui.es.js",
   "style": "dist/style.css",
-  "typings": "dist/types/index.d.ts",
+   "homepage" : "https://hxnian.github.io/quadratic-nut-ui/",
   "exports": {
     ".": {
       "import": "./dist/mzui.es.js",
@@ -30,14 +30,16 @@
   ],
   "scripts": {
     "dev": "npm run checked && vite --open --force",
-    "build:doc": "npm run checked && vue-tsc --noEmit && vite build",
+    "build:doc": "npm run checked && vite build",
     "preview": "vite preview",
     "checked": "npm run generate:file && tsc",
     "generate:file": "node bin/generate-mzui.js",
     "generate:types": "node bin/generate-types.js",
     "generate:themes": "node bin/generate-themes.js",
     "publish": "npm publish",
-    "build": "npm run checked && vite build --config vite.config.build.ts && vite build --config vite.config.build.disperse.ts && npm run generate:types && npm run generate:themes && vite build --config vite.config.build.css.ts"
+    "build": "npm run checked && vite build --config vite.config.build.ts && vite build --config vite.config.build.disperse.ts && npm run generate:types && npm run generate:themes && vite build --config vite.config.build.css.ts",
+    "deploy": "gh-pages -d .",
+    "deploy:build": "npm run build:doc && gh-pages -d ."
   },
   "dependencies": {
     "sass": "~1.32.0",
