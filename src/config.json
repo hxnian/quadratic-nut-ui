@@ -57,15 +57,76 @@
       "enName": "base",
       "packages": [
         {
-          "version": "3.0.0",
+          "version": "1.0.0",
           "name": "Button",
           "taro": true,
           "sort": 1,
           "cName": "按钮",
           "type": "component",
           "show": true,
-          "desc": "按钮用于触发一个操作，如提交表单。",
-          "author": "richard1015"
+          "exportEmpty": true,
+          "desc": "用于复杂数据的展示",
+          "author": "xiao"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Cell",
+          "taro": true,
+          "sort": 1,
+          "cName": "展示",
+          "type": "component",
+          "show": true,
+          "exportEmpty": true,
+          "desc": "用于复杂数据的展示",
+          "author": "xiao"
+        },
+        {
+          "version": "1.0.0",
+          "name": "DetailsCell",
+          "taro": true,
+          "sort": 2,
+          "cName": "展示",
+          "type": "component",
+          "show": true,
+          "exportEmpty": true,
+          "desc": "用于简单数据的展示",
+          "author": "xiao"
+        },
+        {
+          "version": "1.0.0",
+          "name": "FormList",
+          "taro": true,
+          "sort": 1,
+          "cName": "编辑",
+          "type": "component",
+          "show": true,
+          "exportEmpty": true,
+          "desc": "用于数据提交，编辑",
+          "author": "xiao"
+        },
+        {
+          "version": "1.0.0",
+          "name": "Loading",
+          "taro": true,
+          "sort": 1,
+          "cName": "下拉刷新",
+          "type": "component",
+          "show": true,
+          "exportEmpty": true,
+          "desc": "用于数据更新",
+          "author": "xiao"
+        },
+        {
+          "version": "1.0.0",
+          "name": "SearchPage",
+          "taro": true,
+          "sort": 1,
+          "cName": "搜索列表",
+          "type": "component",
+          "show": true,
+          "exportEmpty": true,
+          "desc": "用于数据加载",
+          "author": "xiao"
         }
       ]
     }

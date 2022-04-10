@@ -1,139 +1,115 @@
-# Button 按钮
 
+
+# Cell 单元格
 ### 介绍
 
-按钮用于触发一个操作，如提交表单。
+复杂的数据信息的展示
 
-### 安装
-
-``` javascript
-import { createApp } from 'vue';
-// vue
-import { Button } from '@nutui/nutui';
-// taro
-import { Button } from '@nutui/nutui-taro';
-
-const app = createApp();
-app.use(Button);
-```
-
-## 代码演示
-
-### 按钮类型
-
-按钮支持 `default`、`primary`、`info`、`warning`、`danger`、`success` 六种类型，默认为 `default`。
-
+###  基本使用
 ```html
-<nut-button type="primary">主要按钮</nut-button>
-<nut-button type="info">信息按钮</nut-button>
-<nut-button type="default">默认按钮</nut-button>
-<nut-button type="danger">危险按钮</nut-button>
-<nut-button type="warning">警告按钮</nut-button>
-<nut-button type="success">成功按钮</nut-button>
+  <mz-cell class="mgt-10" v-bind="datalist"></mz-cell>
+  <mz-cell class="mgt-10" v-bind="dataNoDes"></mz-cell>
+  <mz-cell class="mgt-10" v-bind="dataColor"></mz-cell>
 ```
-
-### 朴素按钮
-
-通过 `plain` 属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。
-
+```javascript
+const datalist = {
+    title: "标题",
+    subTitle: "副标题",
+    desc: 88
+};
+const dataNoDes = {
+    title: "没有副标题和右箭头",
+    desc: 88,
+    isLink: false
+};
+const dataColor = {
+    title: "信息颜色",
+    desc: 88,
+    desColor: "red",
+    isLink: false
+};
+```
+###  图片的展示方式
 ```html
-<nut-button plain type="primary">朴素按钮</nut-button>
-<nut-button plain type="info">朴素按钮</nut-button>
+  <mz-cell class="mgt-10" v-bind="dataImgList"></mz-cell>
 ```
-
-### 禁用状态
-
-通过 `disabled` 属性来禁用按钮，禁用状态下按钮不可点击。
-
+```javascript
+const dataImgList = {
+    image:
+        "https://img11.360buyimg.com/imagetools/jfs/t1/137646/13/7132/1648/5f4c748bE43da8ddd/a3f06d51dcae7b60.png",
+    title: "图片标题",
+    subTitle: "副标题",
+    desc: 88
+};
+```
+###  图标的展示方式
 ```html
-<nut-button disabled type="primary">禁用状态</nut-button>
-<nut-button plain disabled type="info">禁用状态</nut-button>
-<nut-button plain disabled type="primary">禁用状态</nut-button>
+  <mz-cell class="mgt-10" v-bind="dataImgList"></mz-cell>
 ```
-
-### 按钮形状
-
-通过 `shape` 属性设置按钮形状，支持圆形、方形按钮，默认为圆形。
-
+```javascript
+const dataIconList = {
+    icon: "daohang",
+    title: "图标标题",
+    subTitle: "副标题",
+    desc: 88
+};
+```
+###  图标的展示方式
 ```html
-<nut-button shape="square" type="primary">方形按钮</nut-button>
-<nut-button type="info">圆形按钮</nut-button>
+<div class="mgt-10">
+    <mz-cell v-bind="dataSlot">
+        <template #icon>自定义左侧内容</template>
+    </mz-cell>
+    <br />
+    <mz-cell v-bind="dataSlotRight">
+        <template #link>自定义右侧</template> </mz-cell
+    ><br />
+    <mz-cell v-bind="dataSlotLeft">
+        <template #title>自定义标题</template>
+    </mz-cell>
+</div>
+```
+```javascript
+const dataSlot = {
+    icon: "daohang",
+    subTitle: "副标题",
+    desc: 88
+};
+const dataSlotLeft = {
+    icon: "daohang",
+    subTitle: "副标题",
+    desc: 88
+};
+const dataSlotright = {
+    icon: "daohang",
+    title: "标题",
+    subTitle: "副标题",
+    desc: 88
+};
 ```
 
-### 加载状态
-
-```html
-<nut-button loading type="info"></nut-button>
-<nut-button loading type="warning">加载中...</nut-button>
-<nut-button :loading="isLoading" type="success" @click="changeLoading">Click me!</nut-button>
-```
-``` javascript
-  // ...
-  let isLoading = ref(false);
-  const changeLoading = () => {
-    isLoading.value = true;
-    setTimeout(() => {
-      isLoading.value = false;
-    }, 3000);
-  };
-
-  return {
-    isLoading,
-    changeLoading
-  };
-  // ...
-```
-
-### 图标按钮
-
-```html
-  <nut-button shape="square" plain type="primary" icon="star-fill"></nut-button>
-  <nut-button shape="square" type="primary" icon="star">收藏</nut-button>
-```
-
-### 按钮尺寸
-
-支持 `large`、`normal`、`small`、`mini` 四种尺寸，默认为 `normal`。
-
-```html
-<nut-button size="large" type="primary">大号按钮</nut-button>
-<nut-button type="primary">普通按钮</nut-button>
-<nut-button size="small" type="primary">小型按钮</nut-button>
-<nut-button size="mini" type="primary">小型按钮</nut-button>
-```
-
-### 块级元素
-
-按钮在默认情况下为行内块级元素，通过 `block` 属性可以将按钮的元素类型设置为块级元素，常用来实现通栏按钮。
-
-```html
-<nut-button block type="primary">块级元素</nut-button>
-```
-
-### 自定义颜色
-通过 color 属性可以自定义按钮的颜色。
-```html
-<nut-button color="#7232dd">单色按钮</nut-button>
-<nut-button color="#7232dd" plain>单色按钮</nut-button>
-<nut-button color="linear-gradient(to right, #ff6034, #ee0a24)">
-  渐变色按钮
-</nut-button>
-```
 ## API
 
-### Props
+| 参数     | 说明                                                         | 类型    | 默认值    |
+| -------- | ------------------------------------------------------------ | ------- | --------- |
+| title     | 标题                                              | String  | 无 |
+| subTitle     | 副标题                                               | String  | 无 |
+| desc    | 右侧箭头文字                                                             | String  | 无 |
+| height    | cell容器的高度                                           | Number  | `100`       |
+| background    | 背景色                                                       | String  | `#fff` |
+| image | 左侧图片                                                          | String  | 无 |
+| icon    | 左侧icon                                                        | String  | 无 |
+| desColor     | 右侧箭头前文字颜色                                 | String  | `#999999` |
+| subColor  | 副文本文字颜色                                             | String  | `#666666` |
+| isLink  | 是否展示右侧箭头                                             | Boolean | `true`   |
 
-| 参数         | 说明                             | 类型   | 默认值           |
-|--------------|----------------------------------|--------|------------------|
-| type         | 类型，可选值为 `primary` `info` `warning` `danger` `success` | String |`default`         |
-| size        | 尺寸，可选值为 `large` `small` `mini`  | String | `normal`      |
-| shape         | 形状，可选值为 `square` | String | `round`             |
-| color | 按钮颜色，支持传入 linear-gradient 渐变色     | String | - |
-| plain          | 	是否为朴素按钮                       | Boolean | `false`             |
-| disabled          | 	是否禁用按钮                       | Boolean | `false`              |
-| block          | 是否为块级元素                        | Boolean | `false`               |
-| icon          | 按钮图标，同Icon组件name属性                        | String | -     |
-| loading          | 按钮loading状态                        | Boolean | `false`               |
+## Slot
+| slot名 | 说明           | 回调参数     |
+|--------|----------------|--------------|
+| icon  | 左侧内容插槽 | - |
+| title  | 标题插槽 | - |
+| link  | 右侧内容插槽 | - |
+
 
 ### Events
 

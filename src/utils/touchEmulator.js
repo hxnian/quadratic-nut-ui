@@ -9,15 +9,7 @@ var supportTouch = 'ontouchstart' in window;
 
 // polyfills
 if (!document.createTouch) {
-  document.createTouch = function(
-    view,
-    target,
-    identifier,
-    pageX,
-    pageY,
-    screenX,
-    screenY
-  ) {
+  document.createTouch = function (view, target, identifier, pageX, pageY, screenX, screenY) {
     // auto set
     return new Touch(
       target,
@@ -37,7 +29,7 @@ if (!document.createTouch) {
 }
 
 if (!document.createTouchList) {
-  document.createTouchList = function() {
+  document.createTouchList = function () {
     var touchList = TouchList();
     for (var i = 0; i < arguments.length; i++) {
       touchList[i] = arguments[i];
@@ -80,12 +72,12 @@ var Touch = function Touch(target, identifier, pos, deltaX, deltaY) {
 function TouchList() {
   var touchList = [];
 
-  touchList['item'] = function(index) {
+  touchList['item'] = function (index) {
     return this[index] || null;
   };
 
   // specified by Mozilla
-  touchList['identifiedTouch'] = function(id) {
+  touchList['identifiedTouch'] = function (id) {
     return this[id + 1] || null;
   };
 
@@ -100,7 +92,7 @@ function TouchList() {
 
 var initiated = false;
 function onMouse(touchType) {
-  return function(ev) {
+  return function (ev) {
     // prevent mouse events
 
     if (ev.type === 'mousedown') {
@@ -118,11 +110,7 @@ function onMouse(touchType) {
     // The EventTarget on which the touch point started when it was first placed on the surface,
     // even if the touch point has since moved outside the interactive area of that element.
     // also, when the target doesnt exist anymore, we update it
-    if (
-      ev.type === 'mousedown' ||
-      !eventTarget ||
-      (eventTarget && !eventTarget.dispatchEvent)
-    ) {
+    if (ev.type === 'mousedown' || !eventTarget || (eventTarget && !eventTarget.dispatchEvent)) {
       eventTarget = ev.target;
     }
 

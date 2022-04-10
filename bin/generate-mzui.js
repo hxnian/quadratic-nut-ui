@@ -47,6 +47,6 @@ ${installFunction}
 ${importScssStr}
 export { install, ${packages.join(',')}  };
 export default { install, version:'${package.version}'};`;
-fs.outputFile(path.resolve(__dirname, '../src/packages/mztui.vue.ts'), fileStrDev, 'utf8', (error) => {
+fs.outputFile(path.resolve(__dirname, '../src/packages/mzui.vue.ts'), fileStrDev, 'utf8', (error) => {
     // logger.success(`${package_config_path} 文件写入成功`);
 });

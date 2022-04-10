@@ -2,10 +2,11 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import config from './package.json';
+// import image from 'rollup-plugin-image';
 
 const banner = `/*!
 * ${config.name} v${config.version} ${new Date()}
-* (c) 2021 @jdf2e.
+* (c) 2022 @mzui.
 * Released under the MIT License.
 */`;
 
@@ -48,6 +49,9 @@ export default defineConfig({
           vue: 'Vue'
         }
       }
+      //  plugins: [
+      //   image()
+      // ]
     },
     lib: {
       entry: 'src/packages/mzui.vue.build.ts',

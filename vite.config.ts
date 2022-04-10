@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import legacy from '@vitejs/plugin-legacy';
+// import legacy from '@vitejs/plugin-legacy';
 import Markdown from 'vite-plugin-md';
 import path from 'path';
-import config from './package.json';
+import config from './package';
 const hljs = require('highlight.js'); // https://highlightjs.org/
 const resolve = path.resolve;
 // https://vitejs.dev/config/
@@ -13,13 +13,13 @@ export default defineConfig({
   server: {
     port: 2021,
     host: '0.0.0.0',
-    proxy: {
-      '/devServer': {
-        target: 'https://nutui.jd.com',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/devServer/, '')
-      }
-    }
+    // proxy: {
+    //   '/devServer': {
+    //     target: 'https://nutui.jd.com',
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace(/^\/devServer/, '')
+    //   }
+    // }
   },
   resolve: {
     alias: [{ find: '@', replacement: resolve(__dirname, './src') }]
@@ -29,7 +29,7 @@ export default defineConfig({
       scss: {
         // example : additionalData: `@import "./src/design/styles/variables";`
         // dont need include file extend .scss
-        additionalData: `@import "@/styles/variables.scss";@import "./doc/assets/styles/variables.scss";`
+        additionalData: `@import "@/assets/variables.scss";@import "@/assets/styles/variables.scss";`
       }
     },
     postcss: {
@@ -52,7 +52,7 @@ export default defineConfig({
           if (lang && hljs.getLanguage(lang)) {
             try {
               return hljs.highlight(lang, str).value;
-            } catch (__) { }
+            } catch (__) {}
           }
 
           return ''; // 使用额外的默认转义
