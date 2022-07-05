@@ -58,18 +58,6 @@
       "packages": [
         {
           "version": "1.0.0",
-          "name": "Button",
-          "taro": true,
-          "sort": 1,
-          "cName": "按钮",
-          "type": "component",
-          "show": true,
-          "exportEmpty": true,
-          "desc": "用于复杂数据的展示",
-          "author": "xiao"
-        },
-        {
-          "version": "1.0.0",
           "name": "Cell",
           "taro": true,
           "sort": 1,

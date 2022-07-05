@@ -1,11 +1,10 @@
-import Button from './button/index.vue';
 import Cell from './cell/index.vue';
 import DetailsCell from './detailscell/index.vue';
 import FormList from './formlist/index.vue';
 import Loading from './loading/index.vue';
 import SearchPage from './searchpage/index.vue';
 function install(app) {
-    const packages = [Button, Cell, DetailsCell, FormList, Loading, SearchPage];
+    const packages = [Cell, DetailsCell, FormList, Loading, SearchPage];
     packages.forEach((item) => {
         if (item.install) {
             app.use(item);
@@ -16,5 +15,5 @@ function install(app) {
     });
 }
 const version = '1.0.1';
-export { install, version, Button, Cell, DetailsCell, FormList, Loading, SearchPage };
+export { install, version, Cell, DetailsCell, FormList, Loading, SearchPage };
 export default { install, version };
