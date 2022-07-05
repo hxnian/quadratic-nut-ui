@@ -8,7 +8,7 @@ const hljs = require('highlight.js'); // https://highlightjs.org/
 const resolve = path.resolve;
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: './',
   // base: '/3x/',
   server: {
     port: 2021,
@@ -52,7 +52,7 @@ export default defineConfig({
           if (lang && hljs.getLanguage(lang)) {
             try {
               return hljs.highlight(lang, str).value;
-            } catch (__) {}
+            } catch (__) { }
           }
 
           return ''; // 使用额外的默认转义
@@ -65,7 +65,8 @@ export default defineConfig({
   ],
   build: {
     target: 'es2015',
-    outDir: './dist/',
+    // outDir: './dist/',
+    outDir: './docs/',
     // outDir: './dist/3x/',
     // // assetsDir: config.version,
     cssCodeSplit: true,
